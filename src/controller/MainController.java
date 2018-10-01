@@ -75,15 +75,15 @@ public class MainController implements Initializable {
     	executeQuery(query);
     	showBooks();
     }
-    
-    
-    @FXML 
+
+
+    @FXML
     private void updateButton() {
     String query = "UPDATE books SET Title='"+titleField.getText()+"',Author='"+authorField.getText()+"',Year="+yearField.getText()+",Pages="+pagesField.getText()+" WHERE ID="+idField.getText()+"";
     executeQuery(query);
 	showBooks();
     }
-    
+
     @FXML
     private void deleteButton() {
     	String query = "DELETE FROM books WHERE ID="+idField.getText()+"";
@@ -172,13 +172,13 @@ public class MainController implements Initializable {
     // I had to change ArrayList to ObservableList I didn't find another option to do this but this works :)
     public void showBooks() {
     	ObservableList<Users> list = getBooksList();
-    	
+
     	idColumn.setCellValueFactory(new PropertyValueFactory<Users,Integer>("id"));
     	titleColumn.setCellValueFactory(new PropertyValueFactory<Users,String>("title"));
     	authorColumn.setCellValueFactory(new PropertyValueFactory<Users,String>("author"));
     	yearColumn.setCellValueFactory(new PropertyValueFactory<Users,Integer>("year"));
     	pagesColumn.setCellValueFactory(new PropertyValueFactory<Users,Integer>("pages"));
-    	
+
     	TableView.setItems(list);
     }
 

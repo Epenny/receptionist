@@ -15,7 +15,7 @@ public class chart extends Application {
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Age", 54),
-                new PieChart.Data("Salary", 10),
+                new PieChart.Data("Gender", 10),
                 new PieChart.Data("Year Of Birth", 22));
 
         //Creating a Pie chart
